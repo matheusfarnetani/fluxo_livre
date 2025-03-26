@@ -74,7 +74,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/register');
+                    Navigator.pushNamed(context, "/cadnovousuario");
                   },
                   child: const Text(
                     'Novo Usuário',

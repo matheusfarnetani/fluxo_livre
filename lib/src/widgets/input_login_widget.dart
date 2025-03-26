@@ -4,12 +4,16 @@ class InputLoginWidget extends StatelessWidget {
   final IconData icon;
   final String hint;
   final bool obscure;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
   const InputLoginWidget({
     super.key,
     required this.icon,
     required this.hint,
     required this.obscure,
+    this.controller,
+    this.validator,
   });
 
   @override
@@ -20,9 +24,11 @@ class InputLoginWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
       ),
       margin: const EdgeInsets.only(bottom: 15),
-      child: TextField(
+      child: TextFormField(
+        controller: controller,
         obscureText: obscure,
         style: const TextStyle(color: Colors.white),
+        validator: validator,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(
             vertical: 15,
@@ -34,7 +40,10 @@ class InputLoginWidget extends StatelessWidget {
             color: Colors.white.withOpacity(0.7),
             fontSize: 16,
           ),
-          prefixIcon: Icon(icon, color: Colors.white),
+          prefixIcon: Icon(
+            icon,
+            color: Colors.white,
+          ),
         ),
       ),
     );

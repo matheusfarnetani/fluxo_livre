@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluxo_livre/src/pages/cad_usuario_page.dart';
 import 'package:fluxo_livre/src/pages/login_page.dart';
 import 'package:fluxo_livre/src/pages/home_page.dart';
 import 'package:fluxo_livre/src/pages/register_page.dart';
@@ -23,6 +24,7 @@ class AppFluxoLivre extends StatelessWidget {
         '/': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
         '/register': (context) => const RegisterPage(),
+        '/cadnovousuario': (context) => const CadUsuarioPage(),
       },
     );
   }
